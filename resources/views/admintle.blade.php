@@ -2,20 +2,19 @@
 
 @section('title')
 
-@section('content_header')
-    <h1>Dashboard</h1>
-@stop
-
 @section('content')
-    <p>Welcome to this beautiful admin panel.</p>
+
+    @if (request()->is('dashboard/moduls'))
+        <h2>MODULS</h2>
+        <p>MOSTRAR MODULS</p>
+    @elseif (request()->is('dashboard/ufs'))
+        <h2>UFS</h2>
+        <p>MOSTRAR UFS.</p>
+    @else
+        <x-bienvenida />
+    @endif
 @stop
 
 @section('css')
-    <link rel="stylesheet" href="/css/admin_custom.css">
-@stop
-
-@section('js')
-    <script>
-        console.log('Hi!');
-    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
 @stop

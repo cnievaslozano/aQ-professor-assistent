@@ -22,9 +22,9 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
-    Route::get('/dashboard', function () {
+    Route::get('/dashboard/{ruta}', function () {
         return view('admintle');
-    })->name('dashboard');
+    })->where('ruta', '.*');
 });
 
 // ADMINTLE 

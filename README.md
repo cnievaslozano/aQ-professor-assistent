@@ -47,7 +47,7 @@ Funcionalidades Principales
 - Validación de horas en las UF: Se valida que todas las actividades de cada UF sumen el número de horas correcto.
 
 ## Diagrama de Clases
-![diagrama](image.png)
+![DIAGRAMA](image.png)
 
 ## Contribuciones
 Si encuentras errores o mejoras posibles, no dudes en contribuir abriendo un issue o enviando un pull request.

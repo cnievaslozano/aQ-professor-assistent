@@ -311,14 +311,14 @@ return [
             'url' => 'admin/blog',
             'can' => 'manage-blog',
         ],
-        [
+        /*[
             'text' => 'pages',
             'url' => 'admin/pages',
             'icon' => 'far fa-fw fa-file',
             'label' => 4,
             'label_color' => 'success',
         ],
-        /* ['header' => 'account_settings'],
+         ['header' => 'account_settings'],
          [
              'text' => 'profile',
              'url' => 'admin/settings',
@@ -328,10 +328,10 @@ return [
              'text' => 'change_password',
              'url' => 'admin/settings',
              'icon' => 'fas fa-fw fa-lock',
-         ],*/
+         ],
         [
-            'text' => 'multilevel',
-            'icon' => 'fas fa-fw fa-share',
+            'text' => 'MÒDULS',
+            'icon' => 'fas fa-regular fa-folder',
             'submenu' => [
                 [
                     'text' => 'level_one',
@@ -366,22 +366,16 @@ return [
                     'url' => '#',
                 ],
             ],
-        ],
-        ['header' => 'labels'],
+        ],*/
         [
-            'text' => 'important',
-            'icon_color' => 'red',
-            'url' => '#',
-        ],
-        [
-            'text' => 'warning',
-            'icon_color' => 'yellow',
-            'url' => '#',
+            'text' => 'Mòduls',
+            'icon' => 'fas fa-regular fa-folder',
+            'url' => 'dashboard/moduls',
         ],
         [
-            'text' => 'information',
-            'icon_color' => 'cyan',
-            'url' => '#',
+            'text' => 'UFS',
+            'icon_color' => 'fas fa-regular fa-folder',
+            'url' => 'dashboard/ufs',
         ],
     ],
 
@@ -537,5 +531,5 @@ return [
     |
     */
 
-    'livewire' => false,
+    'livewire' => true,
 ];
