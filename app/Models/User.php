@@ -58,4 +58,17 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    // ADMIN LTE
+    public function adminlte_desc()
+    {
+        // IF USER ROLE == PROFESOR
+        return "Professorat";
+        //ELSE RETURN ADMIN
+    }
+
+    public function adminlte_profile_url()
+    {
+        return "profile/username";
+    }
 }

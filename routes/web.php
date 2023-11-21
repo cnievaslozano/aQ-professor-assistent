@@ -26,3 +26,8 @@ Route::middleware([
         return view('admintle');
     })->name('dashboard');
 });
+
+// ADMINTLE 
+Route::get('profile/username', function () {
+    return view('profile.show');
+});

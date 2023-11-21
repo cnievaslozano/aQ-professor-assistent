@@ -36,19 +36,20 @@ php artisan serve
 Visita http://localhost:8000 en tu navegador para acceder a la aplicación.
 
 Funcionalidades Principales
-Sistema de Login: Los profesores y administradores pueden iniciar sesión en la aplicación.
-Gestión de Programaciones Didácticas: Capacidad para crear, modificar y eliminar programaciones.
-Gestión de Unidades Formativas (UF): Administración de las UF, incluyendo la creación, modificación y eliminación.
-Gestión de Resultados de Aprendizaje (RA): Herramientas para gestionar los RA dentro de cada UF, incluyendo la adición, modificación y eliminación de criterios de evaluación y contenidos asociados.
-Roles de Usuario: Diferenciación entre roles de usuario: profesor y administrador.
-Vista de Administrador: Capacidad del administrador para ver, crear, modificar y eliminar todas las programaciones y sus componentes.
-Creación de Módulo por el Administrador con RA, Criterios y Contenidos.
-Creación de Programación del Módulo por el Profesor con la adición de actividades.
-Validación de horas en las UF: Se valida que todas las actividades de cada UF sumen el número de horas correcto.
-Diagrama de Clases
-Se adjunta un diagrama de clases en la carpeta docs.
+- Sistema de Login: Los profesores y administradores pueden iniciar sesión en la aplicación.
+- Gestión de Programaciones Didácticas: Capacidad para crear, modificar y eliminar programaciones.
+- Gestión de Unidades Formativas (UF): Administración de las UF, incluyendo la creación, modificación y eliminación.
+- Gestión de Resultados de Aprendizaje (RA): Herramientas para gestionar los RA dentro de cada UF, incluyendo la adición, modificación y eliminación de criterios de evaluación y contenidos asociados.
+- Roles de Usuario: Diferenciación entre roles de usuario: profesor y administrador.
+- Vista de Administrador: Capacidad del administrador para ver, crear, modificar y eliminar todas las programaciones y sus componentes.
+- Creación de Módulo por el Administrador con RA, Criterios y Contenidos.
+- Creación de Programación del Módulo por el Profesor con la adición de actividades.
+- Validación de horas en las UF: Se valida que todas las actividades de cada UF sumen el número de horas correcto.
 
-Contribuciones
+## Diagrama de Clases
+![diagrama](image.png)
+
+## Contribuciones
 Si encuentras errores o mejoras posibles, no dudes en contribuir abriendo un issue o enviando un pull request.
 
 Licencia
