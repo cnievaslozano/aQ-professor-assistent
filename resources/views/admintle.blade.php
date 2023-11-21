@@ -5,11 +5,9 @@
 @section('content')
 
     @if (request()->is('dashboard/moduls'))
-        <h2>MODULS</h2>
-        <p>MOSTRAR MODULS</p>
+        <x-show-list-moduls />
     @elseif (request()->is('dashboard/ufs'))
-        <h2>UFS</h2>
-        <p>MOSTRAR UFS.</p>
+        <x-show-list-ufs />
     @else
         <x-bienvenida />
     @endif

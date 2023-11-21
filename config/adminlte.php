@@ -368,6 +368,11 @@ return [
             ],
         ],*/
         [
+            'text' => 'Benvinguda',
+            'icon' => 'fas fa-solid fa-door-open',
+            'url' => 'dashboard/benvinguda',
+        ],
+        [
             'text' => 'Mòduls',
             'icon' => 'fas fa-regular fa-folder',
             'url' => 'dashboard/moduls',
