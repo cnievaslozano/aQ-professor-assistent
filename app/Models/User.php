@@ -36,7 +36,7 @@ class User extends Authenticatable
 
     public function programacions()
     {
-        return $this->hasMany(Programacions::class);
+        return $this->hasMany(Programacion::class, 'user_id');
     }
 
     /**

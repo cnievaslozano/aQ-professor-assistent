@@ -45,6 +45,5 @@ return new class extends Migration {
         Schema::dropIfExists('programacions');
         Schema::dropIfExists('activitats');
         Schema::dropIfExists('programacio_modul');
-        Schema::dropIfExists('programacions');
     }
 };
