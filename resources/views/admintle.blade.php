@@ -8,7 +8,9 @@
         <x-show-list-moduls />
     @elseif (request()->is('dashboard/ufs'))
         <x-show-list-ufs />
-    @else
+    @elseif (request()->is('dashboard/programacions'))
+        <x-show-list-programacions />
+    @elseif (request()->is('dashboard'))
         <x-bienvenida />
     @endif
 @stop

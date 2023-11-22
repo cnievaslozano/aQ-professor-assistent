@@ -291,21 +291,22 @@ return [
 
     'menu' => [
         // Navbar items:
-        [
+        /*[
             'type' => 'navbar-search',
             'text' => 'search',
             'topnav_right' => true,
-        ],
+        ],*/
         [
             'type' => 'fullscreen-widget',
             'topnav_right' => true,
         ],
 
         // Sidebar items:
+        /*
         [
             'type' => 'sidebar-menu-search',
             'text' => 'search',
-        ],
+        ],*/
         [
             'text' => 'blog',
             'url' => 'admin/blog',
@@ -379,8 +380,13 @@ return [
         ],
         [
             'text' => 'UFS',
-            'icon_color' => 'fas fa-regular fa-folder',
+            'icon' => 'fas fa-regular fa-folder',
             'url' => 'dashboard/ufs',
+        ],
+        [
+            'text' => 'Programacions',
+            'icon' => 'fas fa-solid fa-book',
+            'url' => 'dashboard/programacions',
         ],
     ],
 

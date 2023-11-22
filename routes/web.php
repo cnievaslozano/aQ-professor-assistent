@@ -17,6 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//rutas dashboard internos
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -27,6 +28,16 @@ Route::middleware([
     })->where('ruta', '.*');
 });
 
+// ruta dashboard
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified',
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('admintle');
+    });
+});
 // ADMINTLE 
 Route::get('profile/username', function () {
     return view('profile.show');
