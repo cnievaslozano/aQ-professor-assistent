@@ -18,6 +18,23 @@ return new class extends Migration {
             $table->text('descripcio');
             $table->timestamps();
         });
+
+        Schema::create('programacio_modul', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('programacio_id');
+            $table->unsignedBigInteger('modul_id');
+            $table->foreign('programacio_id')->references('id')->on('programacions');
+            $table->foreign('modul_id')->references('id')->on('moduls');
+            $table->timestamps();
+        });
+
+        Schema::create('activitats', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('programacio_id');
+            $table->foreign('programacio_id')->references('id')->on('programacions');
+            $table->string('descripcio');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -25,6 +42,9 @@ return new class extends Migration {
      */
     public function down(): void
     {
+        Schema::dropIfExists('programacions');
+        Schema::dropIfExists('activitats');
+        Schema::dropIfExists('programacio_modul');
         Schema::dropIfExists('programacions');
     }
 };
