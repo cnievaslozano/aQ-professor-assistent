@@ -12,6 +12,8 @@
         <x-show-list-programacions />
     @elseif (request()->is('dashboard'))
         <x-bienvenida />
+    @elseif (request()->is('dashboard/benvinguda'))
+        <x-bienvenida />
     @endif
 @stop
 

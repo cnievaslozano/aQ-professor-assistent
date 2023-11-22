@@ -30,6 +30,16 @@ class User extends Authenticatable
     ];
 
     /**
+     *  Relaciones del modelo
+     *  Programación
+     */
+
+    public function programacions()
+    {
+        return $this->hasMany(Programacions::class);
+    }
+
+    /**
      * The attributes that should be hidden for serialization.
      *
      * @var array<int, string>
