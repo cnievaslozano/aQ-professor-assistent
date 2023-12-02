@@ -1,7 +1,7 @@
 @extends('adminlte::page')
 
 @section('title')
-Programacion
+Uf
 @endsection
 
 @section('content')
@@ -13,11 +13,11 @@ Programacion
                     <div style="display: flex; justify-content: space-between; align-items: center;">
 
                         <span id="card_title">
-                            {{ __('Programacion') }}
+                            {{ __('Uf') }}
                         </span>
 
                         <div class="float-right">
-                            <a href="{{ route('programacions.create') }}" class="btn btn-primary btn-sm float-right"
+                            <a href="{{ route('ufs.create') }}" class="btn btn-primary btn-sm float-right"
                                 data-placement="left">
                                 {{ __('Create New') }}
                             </a>
@@ -37,30 +37,27 @@ Programacion
                                 <tr>
                                     <th>No</th>
 
-                                    <th>Any</th>
+                                    <th>Name</th>
+                                    <th>Hours</th>
                                     <th>Modul</th>
-                                    <th>Professor</th>
 
                                     <th></th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($programacions as $programacion)
+                                @foreach ($ufs as $uf)
                                 <tr>
                                     <td>{{ ++$i }}</td>
 
-                                    <td>{{ $programacion->any }}</td>
-                                    <td>{{ $programacion->modul->name}}</td>
-                                    <td>{{ $programacion->user->name }}</td>
+                                    <td>{{ $uf->name }}</td>
+                                    <td>{{ $uf->hours }}</td>
+                                    <td>{{ $uf->modul->name }}</td>
 
                                     <td>
-                                        <form action="{{ route('programacions.destroy',$programacion->id) }}"
-                                            method="POST">
-                                            <a class="btn btn-sm btn-primary "
-                                                href="{{ route('programacions.show',$programacion->id) }}"><i
+                                        <form action="{{ route('ufs.destroy',$uf->id) }}" method="POST">
+                                            <a class="btn btn-sm btn-primary " href="{{ route('ufs.show',$uf->id) }}"><i
                                                     class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
-                                            <a class="btn btn-sm btn-success"
-                                                href="{{ route('programacions.edit',$programacion->id) }}"><i
+                                            <a class="btn btn-sm btn-success" href="{{ route('ufs.edit',$uf->id) }}"><i
                                                     class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
                                             @csrf
                                             @method('DELETE')
@@ -75,7 +72,7 @@ Programacion
                     </div>
                 </div>
             </div>
-            {!! $programacions->links() !!}
+            {!! $ufs->links() !!}
         </div>
     </div>
 </div>

@@ -5,28 +5,26 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class Programacion
+ * Class Contingut
  *
  * @property $id
- * @property $any
- * @property $modul_id
- * @property $user_id
+ * @property $contingut
+ * @property $ra_id
  * @property $created_at
  * @property $updated_at
  *
  * @property Activitat[] $activitats
- * @property Modul $modul
- * @property User $user
+ * @property ActivitatContingut[] $activitatContinguts
+ * @property Ra $ra
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
  */
-class Programacion extends Model
+class Contingut extends Model
 {
 
     static $rules = [
-        'any' => 'required',
-        'modul_id' => 'required',
-        'user_id' => 'required',
+        'contingut' => 'required',
+        'ra_id' => 'required',
     ];
 
     protected $perPage = 20;
@@ -36,7 +34,7 @@ class Programacion extends Model
      *
      * @var array
      */
-    protected $fillable = ['any', 'modul_id', 'user_id'];
+    protected $fillable = ['contingut', 'ra_id'];
 
 
     /**
@@ -44,23 +42,23 @@ class Programacion extends Model
      */
     public function activitats()
     {
-        return $this->hasMany('App\Activitat', 'programacion_id', 'id');
+        return $this->hasMany('App\Activitat', 'contingut_ids', 'id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function activitatContinguts()
+    {
+        return $this->hasMany('App\ActivitatContingut', 'contingut_id', 'id');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function modul()
+    public function ra()
     {
-        return $this->hasOne('App\Modul', 'id', 'modul_id');
-    }
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
-     */
-    public function user()
-    {
-        return $this->hasOne('App\User', 'id', 'user_id');
+        return $this->hasOne('App\Ra', 'id', 'ra_id');
     }
 
 

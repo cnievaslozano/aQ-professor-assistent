@@ -1,8 +1,9 @@
 @extends('adminlte::page')
 
 @section('title')
-Programacion
+Activitat
 @endsection
+
 
 @section('content')
 <div class="container-fluid">
@@ -13,11 +14,11 @@ Programacion
                     <div style="display: flex; justify-content: space-between; align-items: center;">
 
                         <span id="card_title">
-                            {{ __('Programacion') }}
+                            {{ __('Activitat') }}
                         </span>
 
                         <div class="float-right">
-                            <a href="{{ route('programacions.create') }}" class="btn btn-primary btn-sm float-right"
+                            <a href="{{ route('activitats.create') }}" class="btn btn-primary btn-sm float-right"
                                 data-placement="left">
                                 {{ __('Create New') }}
                             </a>
@@ -37,30 +38,37 @@ Programacion
                                 <tr>
                                     <th>No</th>
 
-                                    <th>Any</th>
-                                    <th>Modul</th>
-                                    <th>Professor</th>
+                                    <th>Title</th>
+                                    <th>Descripcio</th>
+                                    <th>Programacion Id</th>
+                                    <th>Uf Id</th>
+                                    <th>Ra Ids</th>
+                                    <th>Criteri Ids</th>
+                                    <th>Contingut Ids</th>
 
                                     <th></th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($programacions as $programacion)
+                                @foreach ($activitats as $activitat)
                                 <tr>
                                     <td>{{ ++$i }}</td>
 
-                                    <td>{{ $programacion->any }}</td>
-                                    <td>{{ $programacion->modul->name}}</td>
-                                    <td>{{ $programacion->user->name }}</td>
+                                    <td>{{ $activitat->title }}</td>
+                                    <td>{{ $activitat->descripcio }}</td>
+                                    <td>{{ $activitat->programacion_id }}</td>
+                                    <td>{{ $activitat->uf_id }}</td>
+                                    <td>{{ $activitat->ra_ids }}</td>
+                                    <td>{{ $activitat->criteri_ids }}</td>
+                                    <td>{{ $activitat->contingut_ids }}</td>
 
                                     <td>
-                                        <form action="{{ route('programacions.destroy',$programacion->id) }}"
-                                            method="POST">
+                                        <form action="{{ route('activitats.destroy',$activitat->id) }}" method="POST">
                                             <a class="btn btn-sm btn-primary "
-                                                href="{{ route('programacions.show',$programacion->id) }}"><i
+                                                href="{{ route('activitats.show',$activitat->id) }}"><i
                                                     class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
                                             <a class="btn btn-sm btn-success"
-                                                href="{{ route('programacions.edit',$programacion->id) }}"><i
+                                                href="{{ route('activitats.edit',$activitat->id) }}"><i
                                                     class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
                                             @csrf
                                             @method('DELETE')
@@ -75,7 +83,7 @@ Programacion
                     </div>
                 </div>
             </div>
-            {!! $programacions->links() !!}
+            {!! $activitats->links() !!}
         </div>
     </div>
 </div>

@@ -1,30 +1,34 @@
-@extends('layouts.app')
+@extends('adminlte::page')
 
-@section('template_title')
-    {{ __('Create') }} Programacion
+@section('title')
+{{ __('Create') }} Programacion
 @endsection
 
 @section('content')
-    <section class="content container-fluid">
-        <div class="row">
-            <div class="col-md-12">
+<section class="content container-fluid">
+    <div class="row">
+        <div class="col-md-12">
 
-                @includeif('partials.errors')
+            @includeif('partials.errors')
 
-                <div class="card card-default">
-                    <div class="card-header">
-                        <span class="card-title">{{ __('Create') }} Programacion</span>
-                    </div>
-                    <div class="card-body">
-                        <form method="POST" action="{{ route('programacions.store') }}"  role="form" enctype="multipart/form-data">
-                            @csrf
+            <div class="card card-default">
+                <div class="card-header">
+                    <span class="card-title">{{ __('Create') }} Programacion</span>
+                </div>
+                <div class="card-body">
+                    <form method="POST" action="{{ route('programacions.store') }}" role="form"
+                        enctype="multipart/form-data">
+                        @csrf
 
-                            @include('programacion.form')
+                        @include('programacion.form')
 
-                        </form>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
-    </section>
-@endsection
+    </div>
+</section>
+@stop
+@section('css')
+<script src="https://cdn.tailwindcss.com"></script>
+@stop

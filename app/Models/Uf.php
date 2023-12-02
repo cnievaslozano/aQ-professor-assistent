@@ -5,28 +5,28 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class Programacion
+ * Class Uf
  *
  * @property $id
- * @property $any
+ * @property $name
+ * @property $hours
  * @property $modul_id
- * @property $user_id
  * @property $created_at
  * @property $updated_at
  *
  * @property Activitat[] $activitats
  * @property Modul $modul
- * @property User $user
+ * @property Ra[] $ras
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
  */
-class Programacion extends Model
+class Uf extends Model
 {
 
     static $rules = [
-        'any' => 'required',
+        'name' => 'required',
+        'hours' => 'required',
         'modul_id' => 'required',
-        'user_id' => 'required',
     ];
 
     protected $perPage = 20;
@@ -36,7 +36,7 @@ class Programacion extends Model
      *
      * @var array
      */
-    protected $fillable = ['any', 'modul_id', 'user_id'];
+    protected $fillable = ['name', 'hours', 'modul_id'];
 
 
     /**
@@ -44,7 +44,7 @@ class Programacion extends Model
      */
     public function activitats()
     {
-        return $this->hasMany('App\Activitat', 'programacion_id', 'id');
+        return $this->hasMany('App\Activitat', 'uf_id', 'id');
     }
 
     /**
@@ -56,11 +56,11 @@ class Programacion extends Model
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function user()
+    public function ras()
     {
-        return $this->hasOne('App\User', 'id', 'user_id');
+        return $this->hasMany('App\Ra', 'uf_id', 'id');
     }
 
 

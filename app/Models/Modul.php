@@ -2,23 +2,57 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Class Modul
+ *
+ * @property $id
+ * @property $name
+ * @property $hours
+ * @property $description
+ * @property $created_at
+ * @property $updated_at
+ *
+ * @property Programacion[] $programacions
+ * @property Uf[] $ufs
+ * @package App
+ * @mixin \Illuminate\Database\Eloquent\Builder
+ */
 class Modul extends Model
 {
-    use HasFactory;
-    protected $fillable = ['nom', 'descripcio', 'hores_totals'];
 
-    // Relación con Programació
-    public function programacio()
+    static $rules = [
+        'name' => 'required',
+        'hours' => 'required',
+    ];
+
+    protected $perPage = 20;
+
+    /**
+     * Attributes that should be mass-assignable.
+     *
+     * @var array
+     */
+    protected $fillable = ['name', 'hours', 'description'];
+
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function programacions()
     {
-        return $this->belongsTo(Programacion::class, 'programacio_id');
+        return $this->hasMany('App\Programacion', 'modul_id', 'id');
     }
 
-    // Relación muchos a muchos con UFs
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function ufs()
     {
-        return $this->belongsToMany(Uf::class, 'modul_uf', 'modul_id', 'uf_id');
+        return $this->hasMany('App\Uf', 'modul_id', 'id');
     }
+
+
 }

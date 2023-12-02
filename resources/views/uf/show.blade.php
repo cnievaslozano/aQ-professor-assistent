@@ -1,7 +1,7 @@
 @extends('adminlte::page')
 
 @section('title')
-{{ $programacion->name ?? "{{ __('Show') Programacion" }}
+{{ $uf->name ?? "{{ __('Show') Uf" }}
 @endsection
 
 @section('content')
@@ -11,26 +11,26 @@
             <div class="card">
                 <div class="card-header">
                     <div class="float-left">
-                        <span class="card-title">{{ __('Show') }} Programacion</span>
+                        <span class="card-title">{{ __('Show') }} Uf</span>
                     </div>
                     <div class="float-right">
-                        <a class="btn btn-primary" href="{{ route('programacions.index') }}"> {{ __('Back') }}</a>
+                        <a class="btn btn-primary" href="{{ route('ufs.index') }}"> {{ __('Back') }}</a>
                     </div>
                 </div>
 
                 <div class="card-body">
 
                     <div class="form-group">
-                        <strong>Any:</strong>
-                        {{ $programacion->any }}
+                        <strong>Name:</strong>
+                        {{ $uf->name }}
+                    </div>
+                    <div class="form-group">
+                        <strong>Hours:</strong>
+                        {{ $uf->hours }}
                     </div>
                     <div class="form-group">
                         <strong>Modul Id:</strong>
-                        {{ $programacion->modul_id }}
-                    </div>
-                    <div class="form-group">
-                        <strong>User Id:</strong>
-                        {{ $programacion->user_id }}
+                        {{ $uf->modul_id }}
                     </div>
 
                 </div>

@@ -369,24 +369,39 @@ return [
             ],
         ],*/
         [
-            'text' => 'Benvinguda',
+            'text' => 'Bienvenida',
             'icon' => 'fas fa-solid fa-door-open',
-            'url' => 'dashboard/benvinguda',
+            'url' => 'bienvenida',
         ],
         [
             'text' => 'Mòduls',
             'icon' => 'fas fa-regular fa-folder',
-            'url' => 'dashboard/moduls',
+            'url' => 'moduls',
         ],
         [
             'text' => 'UFS',
             'icon' => 'fas fa-regular fa-folder',
-            'url' => 'dashboard/ufs',
+            'url' => 'ufs',
+        ],
+        [
+            'text' => 'RAS',
+            'icon' => 'fas fa-regular fa-folder',
+            'url' => 'ras',
+        ],
+        [
+            'text' => 'Continguts',
+            'icon' => 'fas fa-regular fa-folder',
+            'url' => 'continguts',
+        ],
+        [
+            'text' => 'Criteris',
+            'icon' => 'fas fa-regular fa-folder',
+            'url' => 'criteris',
         ],
         [
             'text' => 'Programacions',
             'icon' => 'fas fa-solid fa-book',
-            'url' => 'dashboard/programacions',
+            'url' => 'programacions',
         ],
     ],
 

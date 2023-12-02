@@ -3,18 +3,8 @@
 @section('title')
 
 @section('content')
-
-    @if (request()->is('dashboard/moduls'))
-        <x-show-list-moduls />
-    @elseif (request()->is('dashboard/ufs'))
-        <x-show-list-ufs />
-    @elseif (request()->is('dashboard/programacions'))
-        <x-show-list-programacions />
-    @elseif (request()->is('dashboard'))
-        <x-bienvenida />
-    @elseif (request()->is('dashboard/benvinguda'))
-        <x-bienvenida />
-    @endif
+    
+    @include('components.bienvenida')
 @stop
 
 @section('css')

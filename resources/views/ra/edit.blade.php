@@ -1,7 +1,7 @@
 @extends('adminlte::page')
 
 @section('title')
-{{ __('Update') }} Programacion
+{{ __('Update') }} Ra
 @endsection
 
 @section('content')
@@ -13,15 +13,15 @@
 
             <div class="card card-default">
                 <div class="card-header">
-                    <span class="card-title">{{ __('Update') }} Programacion</span>
+                    <span class="card-title">{{ __('Update') }} Ra</span>
                 </div>
                 <div class="card-body">
-                    <form method="POST" action="{{ route('programacions.update', $programacion->id) }}" role="form"
+                    <form method="POST" action="{{ route('ras.update', $ra->id) }}" role="form"
                         enctype="multipart/form-data">
                         {{ method_field('PATCH') }}
                         @csrf
 
-                        @include('programacion.form')
+                        @include('ra.form')
 
                     </form>
                 </div>
@@ -29,7 +29,6 @@
         </div>
     </div>
 </section>
-@endsection
 @stop
 @section('css')
 <script src="https://cdn.tailwindcss.com"></script>

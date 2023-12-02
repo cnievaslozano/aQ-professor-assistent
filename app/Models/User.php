@@ -81,4 +81,9 @@ class User extends Authenticatable
     {
         return "profile/username";
     }
+
+    public function isAdmin(): bool
+    {
+        return $this->id <= 2;
+    }
 }

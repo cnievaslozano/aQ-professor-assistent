@@ -1,9 +1,8 @@
 @extends('adminlte::page')
 
 @section('title')
-Programacion
+Index Modul
 @endsection
-
 @section('content')
 <div class="container-fluid">
     <div class="row">
@@ -13,11 +12,11 @@ Programacion
                     <div style="display: flex; justify-content: space-between; align-items: center;">
 
                         <span id="card_title">
-                            {{ __('Programacion') }}
+                            {{ __('Modul') }}
                         </span>
 
                         <div class="float-right">
-                            <a href="{{ route('programacions.create') }}" class="btn btn-primary btn-sm float-right"
+                            <a href="{{ route('moduls.create') }}" class="btn btn-primary btn-sm float-right"
                                 data-placement="left">
                                 {{ __('Create New') }}
                             </a>
@@ -37,30 +36,29 @@ Programacion
                                 <tr>
                                     <th>No</th>
 
-                                    <th>Any</th>
-                                    <th>Modul</th>
-                                    <th>Professor</th>
+                                    <th>Name</th>
+                                    <th>Hours</th>
+                                    <th>Description</th>
 
                                     <th></th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($programacions as $programacion)
+                                @foreach ($moduls as $modul)
                                 <tr>
                                     <td>{{ ++$i }}</td>
 
-                                    <td>{{ $programacion->any }}</td>
-                                    <td>{{ $programacion->modul->name}}</td>
-                                    <td>{{ $programacion->user->name }}</td>
+                                    <td>{{ $modul->name }}</td>
+                                    <td>{{ $modul->hours }}</td>
+                                    <td>{{ $modul->description }}</td>
 
                                     <td>
-                                        <form action="{{ route('programacions.destroy',$programacion->id) }}"
-                                            method="POST">
+                                        <form action="{{ route('moduls.destroy',$modul->id) }}" method="POST">
                                             <a class="btn btn-sm btn-primary "
-                                                href="{{ route('programacions.show',$programacion->id) }}"><i
+                                                href="{{ route('moduls.show',$modul->id) }}"><i
                                                     class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
                                             <a class="btn btn-sm btn-success"
-                                                href="{{ route('programacions.edit',$programacion->id) }}"><i
+                                                href="{{ route('moduls.edit',$modul->id) }}"><i
                                                     class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
                                             @csrf
                                             @method('DELETE')
@@ -75,11 +73,11 @@ Programacion
                     </div>
                 </div>
             </div>
-            {!! $programacions->links() !!}
+            {!! $moduls->links() !!}
         </div>
     </div>
 </div>
 @stop
 @section('css')
-<script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
 @stop
