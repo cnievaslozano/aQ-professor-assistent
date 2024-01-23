@@ -403,6 +403,11 @@ return [
             'icon' => 'fas fa-solid fa-book',
             'url' => 'programacions',
         ],
+        [
+            'text' => 'Activitats',
+            'icon' => 'fas fa-regular fa-folder',
+            'url' => 'activitats',
+        ],
     ],
 
     /*
