@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ContingutController;
+use App\Http\Controllers\ActivitatController;
 use App\Http\Controllers\CriteriController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ModulController;
@@ -50,3 +51,4 @@ Route::resource('/ras', RaController::class);
 Route::resource('/continguts', ContingutController::class);
 Route::resource('/criteris', CriteriController::class);
 Route::resource('/programacions', ProgramacionController::class);
+Route::resource('/activitats', ActivitatController::class);

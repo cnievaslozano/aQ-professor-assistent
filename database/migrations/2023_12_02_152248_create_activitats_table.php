@@ -14,6 +14,7 @@ return new class extends Migration {
             $table->id();
             $table->string('title');
             $table->string('descripcio');
+            $table->integer('hores');
             $table->foreignId('programacion_id')->constrained();
             $table->foreignId('uf_id')->constrained();
             $table->foreignId('ra_ids')->constrained();
