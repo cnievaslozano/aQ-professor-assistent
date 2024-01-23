@@ -42,7 +42,7 @@ class Criteri extends Model
      */
     public function activitats()
     {
-        return $this->hasMany('App\Activitat', 'criteri_ids', 'id');
+        return $this->hasMany('App\Models\Activitat', 'criteri_ids', 'id');
     }
 
     /**
@@ -50,7 +50,7 @@ class Criteri extends Model
      */
     public function activitatCriteris()
     {
-        return $this->hasMany('App\ActivitatCriteri', 'criteri_id', 'id');
+        return $this->hasMany('App\Models\ActivitatCriteri', 'criteri_id', 'id');
     }
 
     /**
@@ -58,7 +58,7 @@ class Criteri extends Model
      */
     public function ra()
     {
-        return $this->hasOne('App\Ra', 'id', 'ra_id');
+        return $this->hasOne('App\Models\Ra', 'id', 'ra_id');
     }
 
 

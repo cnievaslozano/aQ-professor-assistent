@@ -43,7 +43,7 @@ class Modul extends Model
      */
     public function programacions()
     {
-        return $this->hasMany('App\Programacion', 'modul_id', 'id');
+        return $this->hasMany('App\Models\Programacion', 'modul_id', 'id');
     }
 
     /**
@@ -51,7 +51,7 @@ class Modul extends Model
      */
     public function ufs()
     {
-        return $this->hasMany('App\Uf', 'modul_id', 'id');
+        return $this->hasMany('App\Models\Uf', 'modul_id', 'id');
     }
 
 

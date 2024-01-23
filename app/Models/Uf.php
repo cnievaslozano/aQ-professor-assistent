@@ -44,7 +44,7 @@ class Uf extends Model
      */
     public function activitats()
     {
-        return $this->hasMany('App\Activitat', 'uf_id', 'id');
+        return $this->hasMany('App\Models\Activitat', 'uf_id', 'id');
     }
 
     /**
@@ -52,7 +52,7 @@ class Uf extends Model
      */
     public function modul()
     {
-        return $this->hasOne('App\Modul', 'id', 'modul_id');
+        return $this->hasOne('App\Models\Modul', 'id', 'modul_id');
     }
 
     /**
@@ -60,7 +60,7 @@ class Uf extends Model
      */
     public function ras()
     {
-        return $this->hasMany('App\Ra', 'uf_id', 'id');
+        return $this->hasMany('App\Models\Ra', 'uf_id', 'id');
     }
 
 

@@ -42,7 +42,7 @@ class Contingut extends Model
      */
     public function activitats()
     {
-        return $this->hasMany('App\Activitat', 'contingut_ids', 'id');
+        return $this->hasMany('App\Models\Activitat', 'contingut_ids', 'id');
     }
 
     /**
@@ -50,7 +50,7 @@ class Contingut extends Model
      */
     public function activitatContinguts()
     {
-        return $this->hasMany('App\ActivitatContingut', 'contingut_id', 'id');
+        return $this->hasMany('App\Models\ActivitatContingut', 'contingut_id', 'id');
     }
 
     /**
@@ -58,7 +58,7 @@ class Contingut extends Model
      */
     public function ra()
     {
-        return $this->hasOne('App\Ra', 'id', 'ra_id');
+        return $this->hasOne('App\Models\Ra', 'id', 'ra_id');
     }
 
 

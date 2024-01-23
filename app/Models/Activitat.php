@@ -57,7 +57,7 @@ class Activitat extends Model
      */
     public function activitatContinguts()
     {
-        return $this->hasMany('App\ActivitatContingut', 'activitat_id', 'id');
+        return $this->hasMany('App\Models\ActivitatContingut', 'activitat_id', 'id');
     }
 
     /**
@@ -65,7 +65,7 @@ class Activitat extends Model
      */
     public function activitatCriteris()
     {
-        return $this->hasMany('App\ActivitatCriteri', 'activitat_id', 'id');
+        return $this->hasMany('App\Models\ActivitatCriteri', 'activitat_id', 'id');
     }
 
     /**
@@ -73,7 +73,7 @@ class Activitat extends Model
      */
     public function activitatRas()
     {
-        return $this->hasMany('App\ActivitatRa', 'activitat_id', 'id');
+        return $this->hasMany('App\Models\ActivitatRa', 'activitat_id', 'id');
     }
 
     /**
@@ -81,7 +81,7 @@ class Activitat extends Model
      */
     public function contingut()
     {
-        return $this->hasOne('App\Contingut', 'id', 'contingut_ids');
+        return $this->hasOne('App\Models\Contingut', 'id', 'contingut_ids');
     }
 
     /**
@@ -89,7 +89,7 @@ class Activitat extends Model
      */
     public function criteri()
     {
-        return $this->hasOne('App\Criteri', 'id', 'criteri_ids');
+        return $this->hasOne('App\Models\Criteri', 'id', 'criteri_ids');
     }
 
     /**
@@ -97,7 +97,7 @@ class Activitat extends Model
      */
     public function programacion()
     {
-        return $this->hasOne('App\Programacion', 'id', 'programacion_id');
+        return $this->hasOne('App\Models\Programacion', 'id', 'programacion_id');
     }
 
     /**
@@ -105,7 +105,7 @@ class Activitat extends Model
      */
     public function ra()
     {
-        return $this->hasOne('App\Ra', 'id', 'ra_ids');
+        return $this->hasOne('App\Models\Ra', 'id', 'ra_ids');
     }
 
     /**
@@ -113,7 +113,7 @@ class Activitat extends Model
      */
     public function uf()
     {
-        return $this->hasOne('App\Uf', 'id', 'uf_id');
+        return $this->hasOne('App\Models\Uf', 'id', 'uf_id');
     }
 
 

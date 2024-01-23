@@ -44,7 +44,7 @@ class Programacion extends Model
      */
     public function activitats()
     {
-        return $this->hasMany('App\Activitat', 'programacion_id', 'id');
+        return $this->hasMany('App\Models\Activitat', 'programacion_id', 'id');
     }
 
     /**
@@ -52,7 +52,7 @@ class Programacion extends Model
      */
     public function modul()
     {
-        return $this->hasOne('App\Modul', 'id', 'modul_id');
+        return $this->hasOne('App\Models\Modul', 'id', 'modul_id');
     }
 
     /**
@@ -60,7 +60,7 @@ class Programacion extends Model
      */
     public function user()
     {
-        return $this->hasOne('App\User', 'id', 'user_id');
+        return $this->hasOne('App\Models\User', 'id', 'user_id');
     }
 
 
